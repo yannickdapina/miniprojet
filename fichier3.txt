@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.zip.*;
+
+public class SenFileCompressor {
+    public static void main(String[] args) {
+        if (args.length < 1) {
+            displayUsage();
+            return;
+        }
+
+        String option = args[0];
+        switch (option) {
+            case "-c":
+                compressFiles(args);
+                break;
+            case "-d":
+                decompressFile(args);
+                break;
+            case "-h":
+                displayUsage();
+                break;
+            default:
+                displayUsage();
+        }
+    }
+
+    private static void displayUsage() {
+        System.out.println("Usage:");
+        System.out.println("java SenFileCompressor -c <file1> <file2> ... [options]");
+        System.out.println("java SenFileCompressor -d <compressedFile> [options]");
+        System.out.println("java SenFileCompressor -h");
+        System.out.println("Options:");
+        System.out.println("-r <directoryPath> Specify directory path for output files");
+        System.out.println("-f Forcefully create directory if it doesn't exist");
+        System.out.println("-v Verbose mode");
+    }
+
+    private static void compressFiles(String[] args) {
+        // Implémentez la logique de compression de fichiers ici
+    }
+
+    private static void decompressFile(String[] args) {
+        // Implémentez la logique de décompression de fichiers ici
+    }
+}
